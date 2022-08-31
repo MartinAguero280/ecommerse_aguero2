@@ -1,0 +1,67 @@
+.carta__producto {
+    background-color: white;
+    width: 15rem;
+    height: 20rem;
+}
+.container__fotoProducto {
+    width: 18rem;
+    height: auto;
+}
+.foto__producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container__contador {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2.5px;
+    margin: 2.5px;
+    background-color: white;
+}
+.boton__contador {
+    font-size: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0px solid white;
+    background-color: white;
+}
+.numero__contador {
+    margin: 0;
+    font-weight: bold;
+}
+.container__infoproducto {
+    width: 18rem;
+    height: auto;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+.precio__producto {
+    border-top: 0.5px solid black;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0;
+    text-align: start;
+}
+.info__producto {
+    font-size: medium;
+    font-weight: bold; 
+    padding: 0.5rem 0.5rem 0 0.5rem; 
+    margin: 0;
+    text-align: start;
+}
+.boton__agregarAlCarrito {
+    font-size: large;
+    padding: 0.5rem 1.5rem;
+    margin: 2px 0;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(61, 88, 206);
+    color: white;
+}

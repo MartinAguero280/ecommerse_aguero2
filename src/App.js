@@ -9,8 +9,8 @@ function App() {
 		<div className="App">
 			<header>
 				<NavBar />
-				<ItemListContainer greeting="Hola esto es una prueba de props"/>
 			</header>
+			<ItemListContainer greeting="Hola esto es una prueba de props"/>
 		</div>
 	)
 }
