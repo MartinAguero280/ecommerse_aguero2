@@ -1,0 +1,35 @@
+.carta__producto {
+    background-color: white;
+    width: 15rem;
+    height: 26rem;
+}
+.container__fotoProducto {
+    width: 18rem;
+    height: auto;
+}
+.foto__producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container__infoproducto {
+    width: 18rem;
+    height: auto;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+.precio__producto {
+    border-top: 0.5px solid black;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0;
+    text-align: start;
+}
+.info__producto {
+    font-size: medium;
+    font-weight: bold; 
+    padding: 0.5rem 0.5rem 0 0.5rem; 
+    margin: 0;
+    text-align: start;
+}
