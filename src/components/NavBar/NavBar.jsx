@@ -2,6 +2,7 @@
 import logo from '../NavBar/imagen_logo.png';
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -9,7 +10,7 @@ const NavBar = () => {
         <div className='div__header'>
 
             <div className='container__logo__manonimotorep'>
-                <a href="../../../App"><img src={logo} className='LogoManoniMotoRep' alt="logo manoni motorep"/></a>
+                <Link to="/"><img src={logo} className='LogoManoniMotoRep' alt="logo manoni motorep"/></Link>
             </div>
 
             <nav className='navbar navbar-expand-lg navbar-light'>

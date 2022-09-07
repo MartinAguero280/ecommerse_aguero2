@@ -1,0 +1,33 @@
+.item__detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.itemDetail__imagen {
+    width: 20rem;
+    height: 20rem;
+}
+
+.itemDetail__imagenContainer {
+    width: 20rem;
+    height: 20rem;
+}
+
+.itemDetail__info {
+    color: white;
+}
+
+.itemDetail__nombre {
+    color: white;
+}
+
+.itemDetail__precio {
+    color: white;
+}
+
+.itemDetail__stock {
+    color: white;
+}
