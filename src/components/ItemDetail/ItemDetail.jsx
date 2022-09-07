@@ -26,6 +26,7 @@ const ItemDetail = ({item}) => {
                 })
             }
             
+            
         </div>
     )
 }
