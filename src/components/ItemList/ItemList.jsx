@@ -9,6 +9,7 @@ const ItemList = ({itemsList}) => {
                     return(
                         <Item 
                         key={producto.id}
+                        id={producto.id}
                         nombre={producto.nombre}
                         precio={producto.precio}
                         categoria={producto.categoria} 

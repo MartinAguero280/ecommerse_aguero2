@@ -6,9 +6,17 @@
     padding: 2rem 0;
 }
 
+.item__detail {
+    border: 1px solid black;
+    background-color: white;
+    width: fit-content;
+    padding: 1rem;
+    margin: 1rem auto;
+}
 .itemDetail__imagen {
     width: 20rem;
     height: 20rem;
+    border: 1px solid black;
 }
 
 .itemDetail__imagenContainer {
@@ -16,18 +24,4 @@
     height: 20rem;
 }
 
-.itemDetail__info {
-    color: white;
-}
 
-.itemDetail__nombre {
-    color: white;
-}
-
-.itemDetail__precio {
-    color: white;
-}
-
-.itemDetail__stock {
-    color: white;
-}

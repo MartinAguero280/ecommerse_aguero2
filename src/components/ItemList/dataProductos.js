@@ -6,7 +6,7 @@ import cubiertas from '../../images/cubiertas_metzeler.jpg';
 import guantesProbiker from '../../images/guantes_moto.jpg';
 import kitCilindro from '../../images/kit_cilindro.jpg';
 import kitTransmision from '../../images/kit_transmision.jpg';
-import lubricanteCadena from '../../images/aceite_motul.jpg';
+import lubricanteCadena from '../../images/lubricante_cadena.jpg';
 
 const data = [
     {

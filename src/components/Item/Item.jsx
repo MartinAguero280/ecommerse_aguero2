@@ -1,6 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import './Item.css';
+import { Link } from "react-router-dom";
 
 
 const Item = ({id, nombre, precio, categoria, imagen, stock}) => {
@@ -11,9 +12,9 @@ const Item = ({id, nombre, precio, categoria, imagen, stock}) => {
 
     const initial = 1
     return (
-        <div onClick={ItemDetailContainer} className='carta__producto'>
+        <div className='carta__producto'>
             <div>
-                <img src={imagen} alt="imagen producto" className='foto__producto' />
+                <Link to={`/itemDetail/${id}`} element={<ItemDetailContainer />}><img src={imagen} alt="imagen producto" className='foto__producto' /></Link>
             </div>
             <div className='container__infoProducto'>
                 <p className='precio__producto'> {precio} </p>

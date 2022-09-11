@@ -1,31 +1,38 @@
 import './ItemDetailContainer.css';
-import Item from '../Item/Item';
 import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import dataProducto from '../ItemDetail/dataProducto'
+import data from '../ItemList/dataProductos';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
+    const {productId} = useParams();
+
     const [item, setItem] =useState([]);
 
-    const obtenerData = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(dataProducto)
-        }, 2000)
-    })
+    const obtenerData = (id) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const producto = data.find(item=> item.id === parseInt(id))
+                resolve(producto)
+            }, 1000)
+        })
+    }
 
     useEffect(() => {
-        obtenerData.then((resultado) => {
-            setItem(resultado);
-        })
-    }, []);
+        const obtenerProducto = async()=> {
+            const producto = await obtenerData(productId);
+            setItem(producto)
+        }
+        obtenerProducto();
+    }, [productId]);
 
 
     return (
 
-        <>
+        <div className='itemDetailContainer'>
             <ItemDetail item = {item} />
-        </>
+        </div>
         
         
     )

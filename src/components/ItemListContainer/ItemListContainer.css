@@ -1,6 +1,34 @@
-.h1__saludo {
+.titulo__pagina {
     text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 0;
+}
+.container__filtroItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0.5rem auto;
+    width: 100%;
+}
+.container__filtro {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.claseActive {
     color: aqua;
+}
+.claseInactive {
+    color: white;
+}
+.texto__filtro {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 10rem;
 }
 .container__itemList {
     display: flex;
