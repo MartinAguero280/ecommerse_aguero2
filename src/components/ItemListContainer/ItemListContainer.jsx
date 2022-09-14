@@ -10,7 +10,6 @@ import { useParams, NavLink } from 'react-router-dom';
 const ItemListContainer = () => {
 
     const {categoryId} = useParams();
-    console.log('categoryId', categoryId);
 
     const [items, setItems] =useState([]);
 
@@ -34,10 +33,10 @@ const ItemListContainer = () => {
 
 
     return (
-        <div className='container__itemList'>
+        <div className='container__itemList container'>
             <h1 className='titulo__pagina'>Productos</h1>
-            <div className='container__filtroItems'>
-                <div className='container__filtro'>
+            <div className='container__filtroItems row'>
+                <div className='container__filtro col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3'>
                     <h4 className='texto__filtro'>filtro</h4>
                     <NavLink className={({isActive})=>isActive ? 'claseActive' : 'claseInactive'} to='/productos/'>todo</NavLink>
                     <NavLink className={({isActive})=>isActive ? 'claseActive' : 'claseInactive'} to='/productos/aceite'>aceite</NavLink>
@@ -49,7 +48,7 @@ const ItemListContainer = () => {
                     <NavLink className={({isActive})=>isActive ? 'claseActive' : 'claseInactive'} to='/productos/transmision'>transmision</NavLink>
                     <NavLink className={({isActive})=>isActive ? 'claseActive' : 'claseInactive'} to='/productos/lubricante'>lubricante</NavLink>
                 </div>
-                <div><ItemList itemsList={items}/></div>
+                <div className='col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9'><ItemList itemsList={items}/></div>
                 
             </div>
             

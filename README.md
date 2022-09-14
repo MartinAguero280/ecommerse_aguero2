@@ -1,3 +1,21 @@
+
+
+Hola bienvenido a mi proyecto.
+
+Este proyecto se trata de una tienda online de repuestos y accesorios para motos.
+
+Por el momento estoy usando una libreria llamada Bootstrap, la uso para simplificar el css.
+
+Las rutas de este proyecto son:
+/productos - Para ir al apartado de productos
+/productos/:categoryId - Para filtrar por categoria cada producto
+/detalle/:productId - Para ir a mas detalles del producto elegido
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

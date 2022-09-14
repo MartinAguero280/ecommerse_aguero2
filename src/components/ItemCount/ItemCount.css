@@ -1,4 +1,9 @@
-
+.container__contadorAgregarAlCarrito {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    align-items: center;
+}
 .container__contador {
     display: flex;
     flex-direction: row;
@@ -9,6 +14,7 @@
     padding: 2.5px;
     margin: 2.5px;
     background-color: white;
+    width: 14rem;
 }
 .boton__contador {
     font-size: 1.2rem;

@@ -14,7 +14,7 @@ const Item = ({id, nombre, precio, categoria, imagen, stock}) => {
     return (
         <div className='carta__producto'>
             <div>
-                <Link to={`/itemDetail/${id}`} element={<ItemDetailContainer />}><img src={imagen} alt="imagen producto" className='foto__producto' /></Link>
+                <Link to={`/detalle/${id}`} element={<ItemDetailContainer />}><img src={imagen} alt="imagen producto" className='foto__producto' /></Link>
             </div>
             <div className='container__infoProducto'>
                 <p className='precio__producto'> {precio} </p>

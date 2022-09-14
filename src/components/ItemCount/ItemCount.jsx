@@ -13,14 +13,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
 
-        <>
+        <div className='container__contadorAgregarAlCarrito'>
             <div className='container__contador'>
                 <button onClick={resta} className='fa-solid fa-minus boton__contador'></button>
                 <h5 className='numero__contador'>{contador}</h5>
                 <button onClick={suma} className='fa-solid fa-plus boton__contador'></button>
             </div>
             <button className='boton__agregarAlCarrito' onClick={ () => {stock !== 0 ?  onAdd(contador) : console.log('No hay stock'); }}>AGREGAR AL CARRITO</button>
-        </>
+        </div>
     )
 }
 
