@@ -17,6 +17,7 @@
     width: 10rem;
     flex-wrap: wrap;
     text-align: center;
+    font-weight: bold;
 }
 .claseActive {
     color: aqua;

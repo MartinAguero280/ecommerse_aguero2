@@ -1,14 +1,17 @@
 import '../ItemDetail/ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({item}) => {
+
+    const value = useContext(CartContext);
 
     const [productCar, setProductCar] = useState(0);
 
     const onAdd = (params) => {
-        console.log("Ah agregado", params ,"productos al carrito");
         setProductCar(params);
+        value.addItem(item, params)
     }
 
 
