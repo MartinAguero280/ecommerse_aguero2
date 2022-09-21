@@ -2,15 +2,18 @@
     background-color: white;
     width: 15rem;
     height: 26rem;
+    border-radius: 10px;
 }
 .container__fotoProducto {
     width: 18rem;
     height: auto;
+    border-radius: 10px;
 }
 .foto__producto {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 .container__infoproducto {
     width: 18rem;

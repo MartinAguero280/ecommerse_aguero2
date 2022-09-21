@@ -4,6 +4,26 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.container__carritoVacio {
+    color: white;
+}
+
+.h2__carritoVAcio {
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.boton__carritoVacio {
+    background-color: white;
+    padding: 0.5rem;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+
+
 }
 
 .container__filaCarrito {
@@ -53,6 +73,19 @@
     flex-direction: column;
 }
 
+.container__botonesCarrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: large;
+}
+
+.h3__total {
+    font-weight: bold;
+}
+
 .boton__eliminarProducto {
     color: white;
     background-color: red;
@@ -60,5 +93,15 @@
     padding: 0.2rem;
     border-radius: 5px;
     border: 1px solid red;
+    margin: 1rem 0;
+}
+
+.boton__finalizarCompra {
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid green;
     margin: 1rem 0;
 }

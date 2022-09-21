@@ -2,12 +2,21 @@ import ItemCount from "../ItemCount/ItemCount";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import './Item.css';
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 
 const Item = ({id, nombre, precio, categoria, imagen, stock}) => {
 
-    function onAdd(params) {
-        console.log(params);
+    const value = useContext(CartContext);
+
+    const [productCar, setProductCar] = useState(0);
+
+    const onAdd = (params) => {
+        setProductCar(params);
+        value.addItem({item: id, nombre, precio, categoria, imagen, stock}, params, precio)
+        
     }
 
     const initial = 1
@@ -20,7 +29,7 @@ const Item = ({id, nombre, precio, categoria, imagen, stock}) => {
                 <p className='precio__producto'> {precio} </p>
                 <p className='info__producto'> {nombre}</p>
             </div>
-            <ItemCount stock = {stock} initial = {initial} onAdd={onAdd}/>
+            <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
         </div>
     )
 }

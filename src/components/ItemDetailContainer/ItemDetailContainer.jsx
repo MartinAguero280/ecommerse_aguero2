@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
+    const [isLoading, setIsLoading] = useState(true);
+
     const {productId} = useParams();
 
     const [item, setItem] =useState([]);
@@ -15,6 +17,7 @@ const ItemDetailContainer = () => {
             setTimeout(() => {
                 const producto = data.find(item=> item.id === parseInt(id))
                 resolve(producto)
+                setIsLoading(false)
             }, 1000)
         })
     }
@@ -31,7 +34,10 @@ const ItemDetailContainer = () => {
     return (
 
         <div className='itemDetailContainer'>
-            <ItemDetail item = {item} />
+            {
+                isLoading === false ? <ItemDetail item = {item} /> :
+                isLoading === true && <h2 className='h2__cargando'>Cargando...</h2>
+            }
         </div>
         
         
