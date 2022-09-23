@@ -59,7 +59,10 @@ export const CartProvider = ({children}) => {
         setProductCartList(productCartListClear)
     }
 
-    const isInCart = (id) => productCartList.find(producto => producto.id === id) ? true : false;
+    const isInCart = (id) => {
+        const productIsInCart = productCartList.some(producto => producto.id === id);
+        return productIsInCart; 
+    };
 
     const getTotalProducts = () => {
         const totalNumberProducts = productCartList.reduce((acc, item) => acc + item.cantidad, 0);

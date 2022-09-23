@@ -30,7 +30,7 @@ export const CartContainer = () => {
 
                     </div>
                     ))}
-                    <h3 className='h3__total'>Total: {totalCarrito} </h3>
+                    <h3 className='h3__total'>Total: ${totalCarrito} </h3>
                     <div className='container__botonesCarrito'>
                         <button onClick={ () => clear()} className="boton__finalizarCompra">Finalizar compra</button>    
                         <button onClick={ () => clear()} className="boton__eliminarProducto">Vaciar carrito</button>
