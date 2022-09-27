@@ -4,6 +4,8 @@ import data from '../ItemList/dataProductos';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList'; 
 import { useParams, NavLink } from 'react-router-dom';
+import { db } from "../../utils/firebase";
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 
 //Desestructuracion de props con {}.
@@ -15,23 +17,20 @@ const ItemListContainer = () => {
 
     const [items, setItems] =useState([]);
 
-    const obtenerData = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data)
-            setIsLoading(false)
-        }, 1000)
-    })
-
+    
     useEffect(() => {
-        obtenerData.then((resultado) => {
-            if (categoryId) {
-                const nuevosItems = resultado.filter(item=>item.categoria === categoryId);
-                setItems(nuevosItems);
-            } else {
-                setItems(resultado);
-            }
-
-        })
+        const queryRef = !categoryId ? collection(db, "items") : query(collection(db, "items"),where("categoria","==",categoryId));
+        getDocs(queryRef).then(response => {
+            const results = response.docs.map(doc => {
+                const newProduct = {
+                    ...doc.data(),
+                    id: doc.id
+                }
+            return newProduct;
+        });
+        setItems(results);
+        });
+        setIsLoading(false);
     }, [categoryId]);
 
 
@@ -43,7 +42,7 @@ const ItemListContainer = () => {
                     <h1 className='titulo__pagina'>Productos</h1>
                     <div className='container__filtroItems row'>
                         <div className='container__filtro col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3'>
-                            <h4 className='texto__filtro'>filtro</h4>
+                            <h3 className='texto__filtro'>filtro</h3>
                             <NavLink className={({isActive})=>isActive ? 'claseActive' : 'claseInactive'} to='/productos/'>todo</NavLink>
                             <NavLink className={({isActive})=>isActive ? 'claseActive' : 'claseInactive'} to='/productos/aceite'>aceite</NavLink>
                             <NavLink className={({isActive})=>isActive ? 'claseActive' : 'claseInactive'} to='/productos/bateria'>bateria</NavLink>

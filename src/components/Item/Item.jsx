@@ -26,12 +26,11 @@ const Item = ({id, nombre, precio, categoria, imagen, stock}) => {
                 <Link to={`/detalle/${id}`} element={<ItemDetailContainer />}><img src={imagen} alt="imagen producto" className='foto__producto' /></Link>
             </div>
             <div className='container__infoProducto'>
-                <p className='precio__producto'> {precio} </p>
+                <p className='precio__producto'>${precio} </p>
                 <p className='info__producto'> {nombre}</p>
             </div>
-            <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
         </div>
     )
 }
-
+//<ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
 export default Item;

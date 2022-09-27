@@ -1,7 +1,7 @@
 .carta__producto {
     background-color: white;
     width: 15rem;
-    height: 26rem;
+    height: 22rem;
     border-radius: 10px;
 }
 .container__fotoProducto {
@@ -36,3 +36,4 @@
     margin: 0;
     text-align: start;
 }
+

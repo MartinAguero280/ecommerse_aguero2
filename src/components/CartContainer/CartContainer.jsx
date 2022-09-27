@@ -38,7 +38,7 @@ export const CartContainer = () => {
                 </div>
                 :
                 <div className='container__carritoVacio'>
-                    <h2 className='h2__carritoVAcio'>El carrito está vacio</h2>
+                    <h2 className='h2__carritoVacio'>El carrito está vacio</h2>
                     <Link to="/productos">
                         <button className='boton__carritoVacio'>Ver catalogo de productos</button>
                     </Link>

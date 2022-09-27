@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import data from '../ItemList/dataProductos';
 import { useParams } from 'react-router-dom';
+import { db } from '../../utils/firebase';
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -12,7 +14,21 @@ const ItemDetailContainer = () => {
 
     const [item, setItem] =useState([]);
 
-    const obtenerData = (id) => {
+    useEffect(() => {
+        const obtenerProducto = async()=> {
+            const queryRef = doc(db, "items", productId);
+            const response = await getDoc(queryRef);
+            const newProduct = {
+                ...response.data(),
+                id: response.id
+            }
+            setItem(newProduct);
+            setIsLoading(false)
+        }
+        obtenerProducto();
+    }, [productId]);
+
+    /*const obtenerData = (id) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const producto = data.find(item=> item.id === parseInt(id))
@@ -28,7 +44,7 @@ const ItemDetailContainer = () => {
             setItem(producto)
         }
         obtenerProducto();
-    }, [productId]);
+    }, [productId]);*/
 
 
     return (

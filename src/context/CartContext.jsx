@@ -56,7 +56,8 @@ export const CartProvider = ({children}) => {
 
     const clear = () => {
         const productCartListClear = [];
-        setProductCartList(productCartListClear)
+        setProductCartList(productCartListClear);
+        setTotalCarrito(0);
     }
 
     const isInCart = (id) => {
