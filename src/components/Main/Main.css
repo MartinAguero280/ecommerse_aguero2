@@ -1,0 +1,94 @@
+.container__hero {
+    width: 100%;
+    color: white;
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+    padding: 10rem 0;
+    align-items: center;
+    background-image: url(../../images/imagen_background_hero.jpg);
+}
+
+
+.container__hero__texto {
+    width: 50%;
+    margin: 1rem 2rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.container__hero__imagen {
+    width: 30rem;
+    height: 15rem;
+    margin-right: 2rem;
+}
+
+.hero__imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container__data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    gap: 5%;
+}
+
+.data__parrafo {
+    text-align: center;
+    padding: 5px 0;
+    margin-bottom: 0;
+}
+
+.container__form__index {
+    width: 100;
+    height: 10rem;
+    background-color: white;
+    padding: 1rem 0;
+    margin: 2rem 0;
+    font-weight: bold;
+}
+
+.parrafo__form__index {
+    margin-bottom: 0;
+    text-align: start;
+    padding-left: 8%;
+}
+
+.form__index {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    padding: 0 1.5rem;
+    align-items: center;
+}
+
+.mail__form__index {
+    width: 80%;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.boton__form__index {
+    border: none;
+    font-size: 40px;
+    background-color: transparent;
+}
+
+.icono__form__index {
+    color: #1c1c1c;
+}

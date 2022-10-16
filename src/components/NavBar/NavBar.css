@@ -48,10 +48,16 @@ body .container-fluid-mod {
     z-index: 1;
 }
 
+.container__logo__manonimotorep :hover {
+    transform: scale(1.05);
+    transition: 250ms;
+}
+
 .LogoManoniMotoRep {
     width: 200px;
     height: 60px;
     align-items: center;
+    transition: 250ms;
 }
 
 header nav div div ul li {

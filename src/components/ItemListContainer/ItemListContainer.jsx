@@ -1,6 +1,5 @@
-
+import React from 'react';
 import './ItemListContainer.css';
-import data from '../ItemList/dataProductos';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList'; 
 import { useParams, NavLink } from 'react-router-dom';

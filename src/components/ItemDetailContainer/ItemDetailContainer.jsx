@@ -1,3 +1,4 @@
+import React from 'react';
 import './ItemDetailContainer.css';
 import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
@@ -26,25 +27,6 @@ const ItemDetailContainer = () => {
         }
         obtenerProducto();
     }, [productId]);
-
-    /*const obtenerData = (id) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const producto = data.find(item=> item.id === parseInt(id))
-                resolve(producto)
-                setIsLoading(false)
-            }, 1000)
-        })
-    }
-
-    useEffect(() => {
-        const obtenerProducto = async()=> {
-            const producto = await obtenerData(productId);
-            setItem(producto)
-        }
-        obtenerProducto();
-    }, [productId]);*/
-
 
     return (
 

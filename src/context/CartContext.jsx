@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
+import Swal from 'sweetalert2';
 
 export const CartContext = React.createContext();
 
 export const CartProvider = ({children}) => {
 
     const [totalCarrito, setTotalCarrito] = useState(0);
-
-    /*const sumarTotalCarrito = (item) => {
-        const newTotalCarrito = totalCarrito + item.precio;
-        setTotalCarrito(newTotalCarrito);
-    }*/
 
     const [productCartList, setProductCartList] = useState([]);
 
@@ -43,15 +39,40 @@ export const CartProvider = ({children}) => {
     }
 
     const removeItem = (itemId) => {
-        const productCartListFilter = productCartList.filter(producto => producto.id !== itemId);
-        setProductCartList(productCartListFilter);
+        
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: "Si pulsa en eliminar se removera el producto de su carrito!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#00BB2D',
+            confirmButtonText: 'Eliminar',
+            cancelButtonText: 'Cancelar',
+            color: '#FFFFFF',
+            background: '#1C1C1C'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Eliminado!',
+                    text: 'Su producto a sido eliminado del carrito',
+                    icon: 'success',
+                    color: '#FFFFFF',
+                    background: '#1C1C1C',
+                    confirmButtonColor: '#3d58ce'
+                })
+                const productCartListFilter = productCartList.filter(producto => producto.id !== itemId);
+                setProductCartList(productCartListFilter);
 
-        const productFilteredId = productCartList.filter(producto => producto.id === itemId);
-        const productFilteredIdArray = productFilteredId.forEach(element => {
-            const precioProductoEliminado = element.precio;
-            const newTotalCarrito = totalCarrito - precioProductoEliminado;
-            setTotalCarrito(newTotalCarrito)
-        });
+                const productFilteredId = productCartList.filter(producto => producto.id === itemId);
+                const productFilteredIdArray = productFilteredId.forEach(element => {
+                    const precioProductoEliminado = element.precio;
+                    const newTotalCarrito = totalCarrito - precioProductoEliminado;
+                    setTotalCarrito(newTotalCarrito)
+                });
+            }
+        })
+
     }
 
     const clear = () => {

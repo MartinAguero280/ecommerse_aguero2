@@ -4,6 +4,11 @@
     height: 22rem;
     border-radius: 10px;
 }
+
+.link__item :hover {
+    color: black;
+}
+
 .container__fotoProducto {
     width: 18rem;
     height: auto;

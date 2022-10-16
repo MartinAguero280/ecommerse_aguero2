@@ -1,4 +1,4 @@
-
+import React from "react";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import './Item.css';
 import { Link } from "react-router-dom";
@@ -21,16 +21,19 @@ const Item = ({id, nombre, precio, categoria, imagen, stock}) => {
 
     const initial = 1
     return (
-        <div className='carta__producto'>
-            <div>
-                <Link to={`/detalle/${id}`} element={<ItemDetailContainer />}><img src={imagen} alt="imagen producto" className='foto__producto' /></Link>
+        <Link to={`/detalle/${id}`} element={<ItemDetailContainer />} className='link__item' >
+            <div className='carta__producto'>
+                <div>
+                    <img src={imagen} alt="imagen producto" className='foto__producto' />
+                </div>
+                <div className='container__infoProducto'>
+                    <p className='precio__producto'>${precio} </p>
+                    <p className='info__producto'> {nombre}</p>
+                </div>
             </div>
-            <div className='container__infoProducto'>
-                <p className='precio__producto'>${precio} </p>
-                <p className='info__producto'> {nombre}</p>
-            </div>
-        </div>
+        </Link>
+        
     )
 }
-//<ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
+
 export default Item;

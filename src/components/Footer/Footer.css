@@ -1,0 +1,81 @@
+footer {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    padding: 2rem 0;
+    color: black;
+}
+
+.boton__facebook__footer {
+    border: none;
+    font-size: 50px;
+    background-color: transparent;
+    margin: 0 0.5rem;
+}
+
+.icono__facebook__footer {
+    color: black;
+}
+
+.boton__instagram__footer {
+    border: none;
+    font-size: 50px;
+    background-color: transparent;
+    margin: 0 0.5rem;
+}
+
+.icono__facebook__footer {
+    color: black;
+}
+
+.container__llevameHaciaArriba {
+    position: fixed;
+    right: 0.9rem;
+    bottom: 5.5rem;
+    background-color: transparent;
+}
+
+
+.boton__llevamehaciaarriba {
+    border: none;
+    font-size: 50px;
+    background-color: transparent;
+}
+.boton__llevamehaciaarriba :hover {
+    text-shadow: 0 0 3px rgb(255, 30, 0);
+    transition: 225ms;
+}
+
+.icono__llevameHaciaArriba {
+    color: rgb(255, 30, 0);
+    transition: 225ms;
+}
+
+.container__whatsapp {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 2px;
+    background-color: transparent;
+}
+
+.boton__whatsapp {
+    border: none;
+    font-size: 75px;
+    background-color: transparent;
+}
+.boton__whatsapp :hover {
+    text-shadow: 0 0 10px #25D366;
+    transition: 225ms;
+}
+
+.icono__whatsapp {
+    color: #25D366;
+    transition: 225ms;
+}

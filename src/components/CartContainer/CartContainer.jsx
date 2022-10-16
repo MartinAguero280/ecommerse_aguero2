@@ -5,6 +5,7 @@ import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import { db } from '../../utils/firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 
 export const CartContainer = () => {
     const {productCartList, removeItem, clear, totalCarrito} = useContext(CartContext);
@@ -14,24 +15,77 @@ export const CartContainer = () => {
     const sendOrder = (event) => {
         event.preventDefault();
 
-        const date = Date();
+        if (event.target[0].value.length, event.target[1].value.length, event.target[2].value.length > 0) {
 
-        const order = {
-            buyer: {
-                name:event.target[0].value,
-                phone:event.target[1].value,
-                email:event.target[2].value
-            },
-            items: productCartList,
-            date: date,
-            total: totalCarrito
+            const date = Date();
+
+            const order = {
+                buyer: {
+                    name:event.target[0].value,
+                    phone:event.target[1].value,
+                    email:event.target[2].value
+                },
+                items: productCartList,
+                date: date,
+                total: totalCarrito
+            }
+
+            const queryRef = collection(db, "orders");
+            addDoc(queryRef, order).then(response => setIdOrder(response.id));
+
+            clear();
+        }else {
+            Swal.fire({
+                icon: 'warning',
+                text: 'No se pueden dejar campos vacíos',
+                confirmButtonColor: '#00BB2D',
+                confirmButtonText: 'Ok',
+                color: '#FFFFFF',
+                background: '#1C1C1C'
+            })
         }
-        console.log("order", order);
 
-        const queryRef = collection(db, "orders");
-        addDoc(queryRef, order).then(response => setIdOrder(response.id));
+    }
 
-        clear();
+    
+
+    const alertaFinalizarCompra = () => {
+        Swal.fire({
+            title: '¡Gracias por su compra!',
+            text: `Su orden se a enviado exitosamente, id: ${idOrder}`,
+            confirmButtonColor: '#00BB2D',
+            confirmButtonText: 'Ok',
+            color: '#FFFFFF',
+            background: '#1C1C1C'
+        })
+    }
+
+    const alertaVaciarCarrito = () => {
+
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: "Si pulsa en eliminar se removeran todos los productos de su carrito!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#00BB2D',
+            confirmButtonText: 'Eliminar',
+            cancelButtonText: 'Cancelar',
+            color: '#FFFFFF',
+            background: '#1C1C1C'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Eliminado!',
+                    text: 'Todos los productos han sido eliminados del carrito',
+                    icon: 'success',
+                    color: '#FFFFFF',
+                    background: '#1C1C1C',
+                    confirmButtonColor: '#3d58ce'
+                })
+                clear()
+            }
+        })
     }
 
     return (
@@ -60,7 +114,7 @@ export const CartContainer = () => {
                     ))}
                     <h3 className='h3__total'>Total: ${totalCarrito} </h3>
                     <div className='container__botonesCarrito'>    
-                        <button onClick={ () => clear()} className="boton__eliminarProducto">Vaciar carrito</button>
+                        <button onClick={ () => alertaVaciarCarrito()} className="boton__eliminarProducto">Vaciar carrito</button>
                     </div>
                     <div className='container__formCarrito'>
                         <form className='form__carrito' onSubmit={sendOrder}>
@@ -85,8 +139,8 @@ export const CartContainer = () => {
             }
 
             {
-                idOrder && <h3 className='ordern__enviada'>Su orden se a enviado exitosamente, id: {idOrder}</h3>
-            }
+                idOrder && alertaFinalizarCompra()
+            } 
 
         </div>
     )

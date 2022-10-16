@@ -1,89 +1,23 @@
+# ManoniMotoRep tienda online
 
+### Descripción:
+ManoniMotoRep tienda online es un ecommerce desarrollado con React uno de los frameworks más populares de JavaScrips. Este proyecto resuelve la necesidad de los usuarios de comprar productos de ManoniMotoRep sin tener que salir de casa, pudiendo agregar productos al carrito para después realizar un pedido y por último finalizar la compra.
 
-Hola bienvenido a mi proyecto.
+### Frameworks y librerías:
+##### Los frameworks utilizados en este proyecto son:
+- Bootstrap
+- SweetAlert
+- Font Awesome
 
-Este proyecto se trata de una tienda online de repuestos y accesorios para motos.
+###### Bootstrap
+La uso para simplificar el CSS del proyecto y para añadir componentes, por ejemplo el navbar con botón de menú hamburguesa.
+###### SeweetAlert
+La uso para mostrarle al usuario lo que va pasando a medida de que realiza su compra por medio de alertas bonitas y amigables, por ejemplo cuando el usuario finaliza su compra se le agradece y se le avisa por medio de una alerta que la compra se ha realizado con éxito.
+###### Font awesome
+La uso para añadir iconos simples y personalizables, por ejemplo el icono de carrito.
 
-Por el momento estoy usando una libreria llamada Bootstrap, la uso para simplificar el css.
+### Hoja de ruta:
+Realizar el responsive.
 
-Las rutas de este proyecto son:
-/productos - Para ir al apartado de productos
-/productos/:categoryId - Para filtrar por categoria cada producto
-/detalle/:productId - Para ir a mas detalles del producto elegido
-
-
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# ecommerse_aguero2
+### Estado del proyecto:
+En desarrollo.
